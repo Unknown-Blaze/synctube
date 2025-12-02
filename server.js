@@ -159,9 +159,6 @@ app.prepare().then(() => {
     });
     
     console.log('All event handlers registered for socket:', socket.id);
-        console.log(`✗ Room ${partyId} not found for sync`);
-      }
-    });
 
     // Handle disconnect
     socket.on('disconnect', () => {
