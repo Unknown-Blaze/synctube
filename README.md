@@ -1,5 +1,14 @@
 # SyncTube - Watch YouTube Together in Sync
 
+Watch YouTube with friends in real time: one person hosts a party, others join with its ID, and playback stays in sync over Socket.IO.
+
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Socket.IO](https://img.shields.io/badge/Socket.IO-4-010101?style=flat-square&logo=socketdotio&logoColor=white)](https://socket.io/)
+[![Live demo](https://img.shields.io/badge/Live%20demo-synctube--tau.vercel.app-000000?style=flat-square&logo=vercel&logoColor=white)](https://synctube-tau.vercel.app)
+
+<img src="docs/screenshot.png" alt="SyncTube create-party screen" width="100%">
+
 A real-time synchronized YouTube player that lets you watch videos with friends, perfectly in sync.
 
 ## 🚀 Quick Start
