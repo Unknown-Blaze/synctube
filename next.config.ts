@@ -8,8 +8,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Disable SWC minify to avoid localStorage issues
-  swcMinify: false,
   // Configure webpack to handle client-only modules
   webpack: (config, { isServer }) => {
     if (isServer) {
