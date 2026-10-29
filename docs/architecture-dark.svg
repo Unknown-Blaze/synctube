@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+<title id="title">SyncTube architecture</title>
+<desc id="desc">Each party member's browser runs the SynctubePlayer component, which drives a YouTube IFrame player and a socket.io-client connection. server.js is one Node HTTP server on port 9002 that serves the Next.js 15 app and hosts a Socket.IO server; party state lives in an in-memory rooms Map that is deleted when a room empties. Clients emit join-party, change-video, sync-play, pause, seek and sync-to-time; the server broadcasts room-state, video-changed, play-synced, paused, seeked, synced-to-time, user-joined and user-left. A Genkit scaffold in src/ai defines no flows.</desc>
+<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0 H0 V20" fill="none" stroke="#171D25" stroke-width="1"/></pattern><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8B949E"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#FBBF24"/></marker></defs>
+<rect x="0.5" y="0.5" width="959" height="639" rx="14" fill="#0D1117"/>
+<rect x="0.5" y="0.5" width="959" height="639" rx="14" fill="url(#grid)" stroke="#30363D"/>
+<text x="24" y="36" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#2DD4BF" font-weight="700" letter-spacing="1.2">ARCHITECTURE · SYNCTUBE</text>
+<text x="936" y="36" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#8B949E" letter-spacing="1" text-anchor="end">SOCKET.IO</text>
+<path d="M18 52 H942" stroke="#30363D" stroke-width="1"/>
+<rect x="24" y="72" width="420" height="300" rx="10" fill="none" stroke="#2DD4BF" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="36" y="360" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#2DD4BF" font-weight="700" letter-spacing="0.6">BROWSER · EVERY PARTY MEMBER</text>
+<rect x="44" y="96" width="380" height="64" rx="6" fill="#161B22" stroke="#8B949E" stroke-width="1.3"/>
+<text x="234.0" y="125.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#E6EDF3" font-weight="600" text-anchor="middle">SynctubePlayer</text>
+<text x="234.0" y="145.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">synctube-player.tsx · PARTY UI</text>
+<path d="M234 160 V182" fill="none" stroke="#8B949E" stroke-width="1.6" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="44" y="184" width="380" height="64" rx="6" fill="#161B22" stroke="#8B949E" stroke-width="1.3"/>
+<text x="234.0" y="213.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#E6EDF3" font-weight="600" text-anchor="middle">socket.io-client</text>
+<text x="234.0" y="233.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">src/lib/socket.ts</text>
+<rect x="44" y="272" width="380" height="64" rx="6" fill="#161B22" stroke="#8B949E" stroke-width="1.3"/>
+<text x="234.0" y="301.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#E6EDF3" font-weight="600" text-anchor="middle">YouTube IFrame player</text>
+<text x="234.0" y="321.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">iframe_api · PLAY · PAUSE · SEEK</text>
+<path d="M44 128 H34 V304 H42" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="516" y="72" width="420" height="300" rx="10" fill="none" stroke="#2DD4BF" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="528" y="360" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#2DD4BF" font-weight="700" letter-spacing="0.6">server.js · NODE HTTP · :9002</text>
+<rect x="536" y="96" width="380" height="64" rx="6" fill="#161B22" stroke="#8B949E" stroke-width="1.3"/>
+<text x="726.0" y="125.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#E6EDF3" font-weight="600" text-anchor="middle">Next.js 15 request handler</text>
+<text x="726.0" y="145.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">PAGES · ASSETS · TURBOPACK IN DEV</text>
+<rect x="536" y="184" width="380" height="64" rx="6" fill="#0E2A27" stroke="#2DD4BF" stroke-width="1.8"/>
+<text x="726.0" y="213.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#E6EDF3" font-weight="600" text-anchor="middle">Socket.IO server</text>
+<text x="726.0" y="233.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">ONE ROOM PER PARTY ID</text>
+<path d="M726 248 V270" fill="none" stroke="#8B949E" stroke-width="1.6" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="536" y="272" width="380" height="64" rx="6" fill="#161B22" stroke="#8B949E" stroke-width="1.3"/>
+<text x="726.0" y="301.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#E6EDF3" font-weight="600" text-anchor="middle">rooms Map</text>
+<text x="726.0" y="321.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">IN MEMORY · DELETED WHEN EMPTY</text>
+<path d="M534 128 H426" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="480" y="118" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">HTTP</text>
+<path d="M426 216 H534" fill="none" stroke="#8B949E" stroke-width="1.6" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="480" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">WS</text>
+<path d="M380 336 V398" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="44" y="400" width="380" height="64" rx="6" fill="#161B22" stroke="#8B949E" stroke-width="1.3"/>
+<text x="234.0" y="429.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#E6EDF3" font-weight="600" text-anchor="middle">YouTube</text>
+<text x="234.0" y="449.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">VIDEO PLAYS IN THE IFRAME</text>
+<rect x="44" y="488" width="380" height="64" rx="6" fill="none" stroke="#8B949E" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="234.0" y="517.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#8B949E" font-weight="600" text-anchor="middle">src/ai · Genkit + Gemini</text>
+<text x="234.0" y="537.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#8B949E" letter-spacing="0.6" text-anchor="middle">SCAFFOLD ONLY · NO FLOWS</text>
+<rect x="516" y="400" width="420" height="168" rx="6" fill="#161B22" stroke="#8B949E" stroke-width="1.3"/>
+<text x="532" y="424" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#2DD4BF" font-weight="700" letter-spacing="0.6">CLIENT → SERVER</text>
+<text x="532" y="445" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">join-party · change-video · sync-play</text>
+<text x="532" y="466" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">pause · seek · sync-to-time</text>
+<text x="532" y="487" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#2DD4BF" font-weight="700" letter-spacing="0.6">SERVER → ROOM</text>
+<text x="532" y="508" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">room-state · video-changed · play-synced</text>
+<text x="532" y="529" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">paused · seeked · synced-to-time</text>
+<text x="532" y="550" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">user-joined · user-left</text>
+<rect x="606" y="596" width="330" height="28" fill="#0D1117" stroke="#8B949E" stroke-width="1"/>
+<text x="771.0" y="614.86" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#E6EDF3" font-weight="700" letter-spacing="0.8" text-anchor="middle">DRAWN FROM SOURCE · NOT TO SCALE</text>
+</svg>
